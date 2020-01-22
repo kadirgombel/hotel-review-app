@@ -13,6 +13,8 @@ import createLogger from 'vuex/dist/logger';
 // Modules
 import account from './modules/account';
 import auth from './modules/auth';
+import reviews from './modules/reviews';
+import hotels from './modules/hotels';
 
 const debug = process.env.NODE_ENV !== 'production';
 
@@ -23,6 +25,8 @@ export default new Vuex.Store({
   modules: {
     account,
     auth,
+    reviews,
+    hotels,
   },
 
   /**
