@@ -51,9 +51,17 @@ import './assets/stylus/app.styl';
 import App from './App.vue';
 import store from './store';
 
+/**
+ * Import and init material ui vue
+ */
+import VueMaterial from 'vue-material';
+import 'vue-material/dist/vue-material.min.css';
+
+Vue.use(VueMaterial);
+
 Vue.config.productionTip = false;
 
-store.dispatch('auth/check');
+// store.dispatch('auth/check');
 
 /* eslint-disable no-new */
 new Vue({

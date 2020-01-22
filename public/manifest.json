@@ -1,6 +1,6 @@
 {
-  "name": "Vue 2 Boilerplate",
-  "short_name": "vue-2-boilerplate",
+  "name": "Hotel Review App",
+  "short_name": "hotel-review-app",
   "icons": [
     {
       "src": "/img/icons/android-chrome-192x192.png",
