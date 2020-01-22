@@ -20,7 +20,7 @@ class BaseProxy {
    * @returns {BaseProxy} The instance of the proxy.
    */
   setParameters(parameters) {
-    Object.keys(parameters).forEach((key) => {
+    Object.keys(parameters).forEach(key => {
       this.parameters[key] = parameters[key];
     });
 
@@ -49,7 +49,7 @@ class BaseProxy {
    * @returns {BaseProxy} The instance of the proxy.
    */
   removeParameters(parameters) {
-    parameters.forEach((parameter) => {
+    parameters.forEach(parameter => {
       delete this.parameters[parameter];
     });
 
@@ -81,7 +81,7 @@ class BaseProxy {
   submit(requestType, url, data = null) {
     return new Promise((resolve, reject) => {
       Vue.$http[requestType](url + this.getParameterString(), data)
-        .then((response) => {
+        .then(response => {
           resolve(response.data);
         })
         .catch(({ response }) => {
@@ -160,7 +160,9 @@ class BaseProxy {
       .filter(key => !!this.parameters[key])
       .map(key => `${key}=${this.parameters[key]}`);
 
-    return parameterStrings.length === 0 ? '' : `?${parameterStrings.join('&')}`;
+    return parameterStrings.length === 0
+      ? ''
+      : `?${parameterStrings.join('&')}`;
   }
 }
 

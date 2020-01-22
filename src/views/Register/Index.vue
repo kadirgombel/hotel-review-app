@@ -10,7 +10,7 @@
             <div class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text">
-                  <i class="fa fa-user fa-fw"/>
+                  <i class="fa fa-user fa-fw" />
                 </span>
               </div>
               <input
@@ -18,14 +18,14 @@
                 type="text"
                 placeholder="First name"
                 class="form-control"
-              >
+              />
             </div>
           </div>
           <div class="form-group">
             <div class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text">
-                  <i class="fa fa-user fa-fw"/>
+                  <i class="fa fa-user fa-fw" />
                 </span>
               </div>
               <input
@@ -33,14 +33,14 @@
                 type="text"
                 placeholder="Last name"
                 class="form-control"
-              >
+              />
             </div>
           </div>
           <div class="form-group">
             <div class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text">
-                  <i class="fa fa-envelope fa-fw"/>
+                  <i class="fa fa-envelope fa-fw" />
                 </span>
               </div>
               <input
@@ -48,14 +48,14 @@
                 type="email"
                 placeholder="Email"
                 class="form-control"
-              >
+              />
             </div>
           </div>
           <div class="form-group">
             <div class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text">
-                  <i class="fa fa-lock fa-fw"/>
+                  <i class="fa fa-lock fa-fw" />
                 </span>
               </div>
               <input
@@ -63,14 +63,14 @@
                 type="password"
                 placeholder="Password"
                 class="form-control"
-              >
+              />
             </div>
           </div>
           <div class="form-group">
             <div class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text">
-                  <i class="fa fa-lock fa-fw"/>
+                  <i class="fa fa-lock fa-fw" />
                 </span>
               </div>
               <input
@@ -78,7 +78,7 @@
                 type="password"
                 placeholder="Confirm password"
                 class="form-control"
-              >
+              />
             </div>
           </div>
           <div class="form-group">

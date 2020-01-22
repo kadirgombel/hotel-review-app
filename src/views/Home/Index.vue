@@ -17,10 +17,7 @@
             href="http://gitter.im/petervmeijgaard"
             target="_blank"
           >
-            <i
-              class="fa fa-github fa-fw"
-              aria-hidden="true"
-            />
+            <i class="fa fa-github fa-fw" aria-hidden="true" />
             <span class="pl-2">
               Gitter
             </span>
@@ -30,10 +27,7 @@
             href="http://github.com/petervmeijgaard"
             target="_blank"
           >
-            <i
-              class="fa fa-github fa-fw"
-              aria-hidden="true"
-            />
+            <i class="fa fa-github fa-fw" aria-hidden="true" />
             <span class="pl-2">
               GitHub
             </span>
@@ -43,10 +37,7 @@
             href="http://twitter.com/petervmeijgaard"
             target="_blank"
           >
-            <i
-              class="fa fa-twitter fa-fw"
-              aria-hidden="true"
-            />
+            <i class="fa fa-twitter fa-fw" aria-hidden="true" />
             <span class="pl-2">
               Twitter
             </span>
@@ -60,10 +51,7 @@
           href="https://github.com/petervmeijgaard/vue-2.0-boilerplate/issues"
           target="_blank"
         >
-          <i
-            class="fa fa-github fa-fw"
-            aria-hidden="true"
-          />
+          <i class="fa fa-github fa-fw" aria-hidden="true" />
           <span class="pl-2">
             GitHub
           </span>

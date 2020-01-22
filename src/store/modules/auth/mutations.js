@@ -7,19 +7,16 @@
  */
 
 import Vue from 'vue';
-import {
-  CHECK,
-  REGISTER,
-  LOGIN,
-  LOGOUT,
-} from './mutation-types';
+import { CHECK, REGISTER, LOGIN, LOGOUT } from './mutation-types';
 
 /* eslint-disable no-param-reassign */
 export default {
   [CHECK](state) {
     state.authenticated = !!localStorage.getItem('id_token');
     if (state.authenticated) {
-      Vue.$http.defaults.headers.common.Authorization = `Bearer ${localStorage.getItem('id_token')}`;
+      Vue.$http.defaults.headers.common.Authorization = `Bearer ${localStorage.getItem(
+        'id_token',
+      )}`;
     }
   },
 

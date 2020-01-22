@@ -1,22 +1,13 @@
 <template>
   <div class="card">
-    <h4
-      v-if="hasSlot('header')"
-      :class="classNamesHeader"
-    >
-      <slot name="header"/>
+    <h4 v-if="hasSlot('header')" :class="classNamesHeader">
+      <slot name="header" />
     </h4>
-    <div
-      v-if="hasSlot('body')"
-      class="card-body"
-    >
-      <slot name="body"/>
+    <div v-if="hasSlot('body')" class="card-body">
+      <slot name="body" />
     </div>
-    <div
-      v-if="hasSlot('footer')"
-      class="card-footer"
-    >
-      <slot name="footer"/>
+    <div v-if="hasSlot('footer')" class="card-footer">
+      <slot name="footer" />
     </div>
   </div>
 </template>
@@ -42,9 +33,7 @@ export default {
   /**
    * The mixins that the component can use.
    */
-  mixins: [
-    SlotMixin,
-  ],
+  mixins: [SlotMixin],
 
   /**
    * The properties that the component accepts.
