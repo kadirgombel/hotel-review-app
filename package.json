@@ -1,12 +1,13 @@
 {
-  "name": "vue-2-boilerplate",
-  "version": "0.0.0",
+  "name": "hotel-review-app",
+  "version": "0.0.1",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test": "vue-cli-service test",
     "e2e": "vue-cli-service e2e",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "prettify": "prettier --write"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -30,6 +31,7 @@
     "@vue/test-utils": "^1.0.0-beta.12",
     "chai": "^4.1.2",
     "lint-staged": "^7.0.0",
+    "prettier": "^1.19.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "vue-template-compiler": "^2.5.13"
@@ -39,12 +41,12 @@
     "last 2 versions",
     "not ie <= 8"
   ],
-  "author": "Peter van Meijgaard <petervanmeijgaard@hotmail.com>",
-  "description": "A boilerplate for medium to large Vue 2 single page applications",
+  "author": "Kadir Gömbel <kadirgombel@gmail.com>",
+  "description": "",
   "bugs": {
-    "url": "https://github.com/petervmeijgaard/vue-2-boilerplate/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/petervmeijgaard/vue-2-boilerplate#readme",
+  "homepage": "",
   "lint-staged": {
     "*.js": [
       "vue-cli-service lint",
@@ -57,20 +59,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/petervmeijgaard/vue-2-boilerplate.git"
+    "url": "git+GIT_URL_HERE"
   },
   "keywords": [
+    "Hotel",
+    "Review",
+    "Project",
     "Vue",
-    "Next",
-    "Boilerplate",
-    "Webpack",
-    "Lint",
-    "Medium",
-    "Large",
-    "SPA",
-    "Single",
-    "Page",
-    "Application"
+    "App"
   ],
   "gitHooks": {
     "pre-commit": "lint-staged"
