@@ -2,45 +2,29 @@
   <div class="home">
     <h1 class="title">Hotels</h1>
     <div class="hotels">
-      <md-card
+      <card
         v-for="hotel in hotelsWithAddInfo"
         :key="hotel.id"
-        class="hotel-card"
-        md-with-hover
-      >
-        <md-card-media-cover class="md-solid md-text-scrim">
-          <md-card-media md-ratio="16:9">
-            <img class="image" :src="hotel.imageUrl" alt="Skyscraper" />
-          </md-card-media>
-
-          <md-card-area>
-            <md-card-header>
-              <div class="md-title">{{ hotel.name }}</div>
-              <div class="md-subhead">{{ hotel.price }} for 1 night</div>
-              <div class="md-subhead">{{ hotel.reviewCount }} reviews</div>
-              <div class="md-subhead star-section">
-                <span>{{ hotel.averageReviewPoint }}</span
-                ><md-icon class="star-icon">star</md-icon>
-              </div>
-            </md-card-header>
-
-            <!--  <md-card-actions>
-            <md-button>Action</md-button>
-            <md-button>Action</md-button>
-          </md-card-actions> -->
-          </md-card-area>
-        </md-card-media-cover>
-      </md-card>
+        :hotel="hotel"
+        @onClick="handleCardClick"
+        :selected="selectedHotelId && hotel.hotelId == selectedHotelId"
+      ></card>
     </div>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
+import Card from '@/components/Card.vue';
 export default {
   name: 'Home',
   data() {
-    return {};
+    return {
+      selectedHotelId: '',
+    };
+  },
+  components: {
+    Card,
   },
   computed: {
     ...mapGetters(['getHotels', 'getReviews']),
@@ -66,7 +50,11 @@ export default {
       return mappedHotels;
     },
   },
-  methods: {},
+  methods: {
+    handleCardClick(id) {
+      this.selectedHotelId = id;
+    },
+  },
   mounted() {
     console.log('home mounted ', this.getHotels);
   },
