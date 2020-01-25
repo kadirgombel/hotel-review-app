@@ -7,9 +7,9 @@
  */
 
 import en from './en';
-import nl from './nl';
+import tr from './tr';
 
 export default {
   en,
-  nl,
+  tr,
 };
