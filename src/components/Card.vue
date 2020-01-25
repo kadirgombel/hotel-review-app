@@ -9,8 +9,12 @@
         <md-card-area>
           <md-card-header>
             <div class="md-title">{{ hotel.name }}</div>
-            <div class="md-subhead">{{ hotel.price }} for 1 night</div>
-            <div class="md-subhead">{{ hotel.reviewCount }} reviews</div>
+            <div class="md-subhead">
+              {{ hotel.price }} / {{ $t('home.night') }}
+            </div>
+            <div class="md-subhead">
+              {{ hotel.reviewCount }} {{ $t('home.reviews') }}
+            </div>
             <div class="md-subhead star-section">
               <span>{{ hotel.averageReviewPoint }}</span
               ><md-icon class="star-icon">star</md-icon>

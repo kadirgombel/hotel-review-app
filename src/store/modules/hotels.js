@@ -37,6 +37,6 @@ export default {
   },
 
   getters: {
-    getHotels: state => state.hotels,
+    hotels: state => state.hotels,
   },
 };

@@ -51,13 +51,19 @@ import './assets/stylus/app.styl';
 import App from './App.vue';
 import store from './store';
 
+import vSelect from 'vue-select';
+import 'vue-select/dist/vue-select.css';
+
 /**
  * Import and init material ui vue
  */
 import VueMaterial from 'vue-material';
 import 'vue-material/dist/vue-material.min.css';
+import 'vue-material/dist/theme/default.css';
 
 Vue.use(VueMaterial);
+
+Vue.component('v-select', vSelect);
 
 Vue.config.productionTip = false;
 

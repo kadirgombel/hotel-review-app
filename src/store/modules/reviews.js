@@ -147,6 +147,6 @@ export default {
   },
 
   getters: {
-    getReviews: state => state.reviews,
+    reviews: state => state.reviews,
   },
 };

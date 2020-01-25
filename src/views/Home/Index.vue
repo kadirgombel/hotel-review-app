@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <h1 class="title">Hotels</h1>
+    <locale-changer></locale-changer>
     <div class="hotels">
       <card
         v-for="hotel in hotelsWithAddInfo"
@@ -10,12 +11,21 @@
         :selected="selectedHotelId && hotel.hotelId == selectedHotelId"
       ></card>
     </div>
+    <transition name="fade" mode="out-in">
+      <card-detail
+        :key="selectedHotel.hotelId"
+        v-if="selectedHotel"
+        :hotel="selectedHotel"
+      ></card-detail>
+    </transition>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
 import Card from '@/components/Card.vue';
+import CardDetail from '@/components/CardDetail.vue';
+import LocaleChanger from '@/components/LocaleChanger.vue';
 export default {
   name: 'Home',
   data() {
@@ -25,15 +35,14 @@ export default {
   },
   components: {
     Card,
+    CardDetail,
+    LocaleChanger,
   },
   computed: {
-    ...mapGetters(['getHotels', 'getReviews']),
+    ...mapGetters(['hotels', 'reviews']),
     hotelsWithAddInfo() {
-      const hotels = this.getHotels;
-      const reviews = this.getReviews;
-      console.log(hotels);
-      const mappedHotels = hotels.map(hotel => {
-        const hotelReviews = reviews.filter(
+      const mappedHotels = this.hotels.map(hotel => {
+        const hotelReviews = this.reviews.filter(
           review => review.hotelId === hotel.hotelId,
         );
         let reviewPointSum = 0;
@@ -48,6 +57,11 @@ export default {
         return hotel;
       });
       return mappedHotels;
+    },
+    selectedHotel() {
+      return this.hotels.filter(
+        hotel => hotel.hotelId === this.selectedHotelId,
+      )[0];
     },
   },
   methods: {
@@ -64,6 +78,8 @@ export default {
 <style lang="scss">
 .home {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 .title {
   text-align: center;
@@ -93,5 +109,14 @@ export default {
 .star-icon {
   font-size: 5px;
   margin: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.15s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
