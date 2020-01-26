@@ -16,11 +16,14 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .review-item {
   display: flex;
   align-items: center;
   padding: 15px;
+  background-color: #a09b9b76;
+  border-radius: 100px;
+  margin-bottom: 5px;
   &__point {
     width: 5%;
     margin-right: 10px;
