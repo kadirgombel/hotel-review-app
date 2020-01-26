@@ -3,7 +3,7 @@
     <div @click="handleCardSelect">
       <md-card-media-cover class="md-solid md-text-scrim">
         <md-card-media md-ratio="16:9">
-          <img class="image" :src="hotel.imageUrl" alt="Skyscraper" />
+          <img class="image" :src="hotel.imageUrls[0]" alt="Skyscraper" />
         </md-card-media>
 
         <md-card-area>
@@ -16,8 +16,8 @@
               {{ hotel.reviewCount }} {{ $t('home.reviews') }}
             </div>
             <div class="md-subhead star-section">
-              <span>{{ hotel.averageReviewPoint }}</span
-              ><md-icon class="star-icon">star</md-icon>
+              <span>{{ hotel.averageReviewPoint }}</span>
+              <md-icon class="star-icon">star</md-icon>
             </div>
           </md-card-header>
         </md-card-area>
@@ -79,7 +79,10 @@ export default {
   align-items: center;
 }
 .star-icon {
-  font-size: 5px;
+  /* backface-visibility: hidden; */
+  font-size: 17px !important;
   margin: 0;
+  margin-left: 2px;
+  color: white !important;
 }
 </style>
