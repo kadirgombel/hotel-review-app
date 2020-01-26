@@ -1,7 +1,10 @@
 <template>
   <div class="home">
     <h1 class="title">Hotels</h1>
-    <locale-changer></locale-changer>
+    <div class="locale-changer">
+      <locale-changer></locale-changer>
+    </div>
+
     <div class="hotels">
       <card
         v-for="hotel in hotelsWithAddInfo"
@@ -69,13 +72,14 @@ export default {
       this.selectedHotelId = id;
     },
   },
-  mounted() {
-    console.log('home mounted ', this.getHotels);
-  },
 };
 </script>
 
 <style lang="scss">
+.locale-changer {
+  display: flex;
+  justify-content: flex-end;
+}
 .home {
   padding: 20px;
   display: flex;
@@ -88,19 +92,8 @@ export default {
 .hotels {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
   margin-top: 20px;
-}
-.hotel-card {
-  justify-content: space-between;
-  width: 30%;
-  &__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  &__image {
-    height: 720px;
-  }
 }
 .star-section {
   display: flex;
@@ -118,5 +111,11 @@ export default {
 .fade-enter,
 .fade-leave-to {
   opacity: 0;
+}
+
+@media (max-width: 1200px) {
+  .md-card-media-cover .md-card-area {
+    position: initial;
+  }
 }
 </style>
