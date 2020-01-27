@@ -39,12 +39,6 @@ export default {
       },
     ],
   },
-  mutations: {
-    increment(state) {
-      // `state` is the local module state
-      state.count++;
-    },
-  },
 
   getters: {
     hotels: state => state.hotels,
