@@ -8,6 +8,7 @@
       ></review-list-item>
     </paginate>
     <paginate-links
+      class="paginate-links"
       for="reviewData"
       :limit="5"
       :show-step-links="true"
@@ -50,9 +51,10 @@ li {
   margin: 0 10px;
 }
 
-.paginate-links.items {
+.paginate-links {
   user-select: none;
   a {
+    font-size: 15px;
     cursor: pointer;
   }
   li.active a {
@@ -67,9 +69,5 @@ li {
     color: #ccc;
     cursor: no-drop;
   }
-}
-
-a {
-  color: #42b983;
 }
 </style>
