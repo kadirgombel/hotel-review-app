@@ -51,7 +51,7 @@
       <div
         class="md-layout-item md-large-size-50 md-medium-size-66 md-small-size-100"
       >
-        <div class="">
+        <div class="reviews">
           <h2 class="reviews__title">
             {{ $t('home.reviewsTitle') }}
             <a @click="handleSortReviews">
@@ -185,7 +185,6 @@ export default {
   }
 }
 .reviews {
-  width: 50%;
   margin-top: 20px;
 }
 .slider-item {

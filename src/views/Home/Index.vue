@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1 class="title">Hotels</h1>
+    <h1 class="title">{{ $t('home.title') }}</h1>
     <div class="locale-changer">
       <locale-changer></locale-changer>
     </div>
@@ -48,15 +48,20 @@ export default {
         const hotelReviews = this.reviews.filter(
           review => review.hotelId === hotel.hotelId,
         );
+
         let reviewPointSum = 0;
+        let reviewCount = 0;
+
         hotelReviews.map(review => {
-          hotel.reviewCount ? hotel.reviewCount++ : (hotel.reviewCount = 1);
+          reviewCount = reviewCount + 1;
           reviewPointSum += review.reviewPoint;
         });
 
+        hotel.reviewCount = reviewCount;
         hotel.averageReviewPoint = (
           reviewPointSum / hotelReviews.length
         ).toFixed(2);
+
         return hotel;
       });
       return mappedHotels;
