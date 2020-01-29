@@ -51,9 +51,28 @@ import './assets/stylus/app.styl';
 import App from './App.vue';
 import store from './store';
 
+import vSelect from 'vue-select';
+import 'vue-select/dist/vue-select.css';
+
+/**
+ * Import and init material ui, swal notification, slider, paginate
+ */
+import VueSwal from 'vue-swal';
+import VueMaterial from 'vue-material';
+import EasySlider from 'vue-easy-slider';
+import VuePaginate from 'vue-paginate';
+import 'vue-material/dist/vue-material.min.css';
+import 'vue-material/dist/theme/default.css';
+
+Vue.use(EasySlider);
+Vue.use(VueMaterial);
+Vue.use(VueSwal);
+Vue.use(VuePaginate);
+Vue.component('v-select', vSelect);
+
 Vue.config.productionTip = false;
 
-store.dispatch('auth/check');
+// store.dispatch('auth/check');
 
 /* eslint-disable no-new */
 new Vue({

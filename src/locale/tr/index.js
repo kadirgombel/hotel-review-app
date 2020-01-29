@@ -1,7 +1,6 @@
 /* ============
- * English Language File
+ * Turkish Language File
  * ============
- *
  */
 
 import home from './home.json';

@@ -1,21 +1,33 @@
 {
-  "name": "vue-2-boilerplate",
-  "version": "0.0.0",
+  "name": "hotel-review-app",
+  "version": "0.0.1",
   "scripts": {
+    "postinstall": "if test \"$NODE_ENV\" = \"production\" ; then npm run build ; fi ",
+    "start": "node server.js",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test": "vue-cli-service test",
     "e2e": "vue-cli-service e2e",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "prettify": "prettier --write src/**/*.{js,vue}"
   },
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "4.3.1",
+    "express": "^4.17.1",
     "font-awesome": "^4.7.0",
+    "node-sass": "^4.13.1",
     "register-service-worker": "^1.0.0",
+    "sass-loader": "^8.0.2",
+    "serve-static": "^1.14.1",
     "vue": "^2.5.13",
+    "vue-easy-slider": "^5.3.2",
     "vue-i18n": "^8.0.0",
+    "vue-material": "^1.0.0-beta-11",
+    "vue-paginate": "^3.6.0",
     "vue-router": "^3.0.1",
+    "vue-select": "^3.4.0",
+    "vue-swal": "^1.0.0",
     "vuex": "^3.0.1",
     "vuex-router-sync": "^5.0.0"
   },
@@ -29,7 +41,10 @@
     "@vue/eslint-config-airbnb": "^3.0.0",
     "@vue/test-utils": "^1.0.0-beta.12",
     "chai": "^4.1.2",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-prettier": "^3.1.2",
     "lint-staged": "^7.0.0",
+    "prettier": "^1.19.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "vue-template-compiler": "^2.5.13"
@@ -39,12 +54,12 @@
     "last 2 versions",
     "not ie <= 8"
   ],
-  "author": "Peter van Meijgaard <petervanmeijgaard@hotmail.com>",
-  "description": "A boilerplate for medium to large Vue 2 single page applications",
+  "author": "Kadir Gömbel <kadirgombel@gmail.com>",
+  "description": "",
   "bugs": {
-    "url": "https://github.com/petervmeijgaard/vue-2-boilerplate/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/petervmeijgaard/vue-2-boilerplate#readme",
+  "homepage": "",
   "lint-staged": {
     "*.js": [
       "vue-cli-service lint",
@@ -57,20 +72,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/petervmeijgaard/vue-2-boilerplate.git"
+    "url": "git+GIT_URL_HERE"
   },
   "keywords": [
+    "Hotel",
+    "Review",
+    "Project",
     "Vue",
-    "Next",
-    "Boilerplate",
-    "Webpack",
-    "Lint",
-    "Medium",
-    "Large",
-    "SPA",
-    "Single",
-    "Page",
-    "Application"
+    "App"
   ],
   "gitHooks": {
     "pre-commit": "lint-staged"

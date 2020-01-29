@@ -1,84 +1,88 @@
 <template>
-  <div class="card">
-    <h4
-      v-if="hasSlot('header')"
-      :class="classNamesHeader"
-    >
-      <slot name="header"/>
-    </h4>
-    <div
-      v-if="hasSlot('body')"
-      class="card-body"
-    >
-      <slot name="body"/>
+  <md-card :class="className" class="hotel-card" md-with-hover>
+    <div @click="handleCardSelect">
+      <md-card-media-cover class="md-solid md-text-scrim">
+        <md-card-media md-ratio="16:9">
+          <img class="image" :src="hotel.imageUrls[0]" alt="Skyscraper" />
+        </md-card-media>
+
+        <md-card-area>
+          <md-card-header>
+            <div class="md-title">{{ hotel.name }}</div>
+            <div class="md-subhead">
+              {{ hotel.price }} / {{ $t('home.night') }}
+            </div>
+            <div class="md-subhead">
+              {{ hotel.reviewCount }} {{ $t('home.reviews') }}
+            </div>
+            <div class="md-subhead star-section">
+              <span>{{ hotel.averageReviewPoint }}</span>
+              <md-icon class="star-icon">star</md-icon>
+            </div>
+          </md-card-header>
+        </md-card-area>
+      </md-card-media-cover>
     </div>
-    <div
-      v-if="hasSlot('footer')"
-      class="card-footer"
-    >
-      <slot name="footer"/>
-    </div>
-  </div>
+  </md-card>
 </template>
 
 <script>
-/* ============
- * Card Component
- * ============
- *
- * A basic card component.
- *
- * Gives an idea how components work.
- */
-
-import SlotMixin from '@/mixins/slot';
-
 export default {
-  /**
-   * The name of the component.
-   */
   name: 'Card',
-
-  /**
-   * The mixins that the component can use.
-   */
-  mixins: [
-    SlotMixin,
-  ],
-
-  /**
-   * The properties that the component accepts.
-   */
   props: {
-    contextualStyle: {
-      default: 'primary',
-      type: String,
-      required: false,
+    hotel: Object,
+    onClick: Function,
+    selected: Boolean,
+  },
+  computed: {
+    className() {
+      return this.selected ? 'active' : 'passive';
     },
   },
-
-  /**
-   * The computed properties that the component can use.
-   */
-  computed: {
-    /**
-     * Computed property which will compute the classes
-     * for the header of the card.
-     *
-     * @returns {Array} The classes for the header.
-     */
-    classNamesHeader() {
-      const classNames = ['card-header'];
-
-      if (this.contextualStyle) {
-        classNames.push(`bg-${this.contextualStyle}`);
-        classNames.push('text-white');
-      } else {
-        classNames.push('bg-default');
-      }
-
-      return classNames;
+  methods: {
+    handleCardSelect: function() {
+      this.$emit('onClick', this.hotel.hotelId);
     },
   },
 };
 </script>
+
+<style scoped lang="scss">
+.hotel-card {
+  transition: all 0.15s ease-in;
+  justify-content: space-between;
+  width: 30%;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__image {
+    height: 720px;
+  }
+  &:hover {
+    transform: scale(1.05);
+  }
+  &:active {
+    transform: scale(1.05) translateY(5px);
+  }
+}
+.active {
+  opacity: 1;
+}
+
+.passive {
+  opacity: 0.5;
+}
+.star-section {
+  display: flex;
+  align-items: center;
+}
+.star-icon {
+  /* backface-visibility: hidden; */
+  font-size: 17px !important;
+  margin: 0;
+  margin-left: 2px;
+  color: white !important;
+}
+</style>
